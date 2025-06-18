@@ -9,7 +9,8 @@ const ProjectsSection = () => {
       title: "Movie-WishList",
       description:
         "A full-stack Movie Wish List Application built with React, Node.js, and MongoDB. Users can search for their desired movie and add it to their Favorites list",
-      image: "https://in.pinterest.com/pin/980799625108599556/&fit=crop",
+      image:
+        "https://github.com/VDevanarayanan/Portfolio/blob/main/src/components/images/Nude%202025-06-18%20at%203.13.00%E2%80%AFPM.png",
       technologies: ["React", "Node.js", "MongoDB", "Express"],
       github: "https://github.com/VDevanarayanan/movie-wish-list",
       live: "https://movie-frontend-6p5h.onrender.com",
@@ -27,13 +28,13 @@ const ProjectsSection = () => {
       featured: true,
     },
     {
-      title: "Weather Dashboard",
+      title: "Ultimate Video Downloader",
       description:
-        "A responsive weather dashboard that displays current weather, forecasts, and interactive maps using multiple weather APIs.",
+        "A website which allows users to download videos from social media platforms like Youtube, Instagram, Twitter, Twitch, Facebook and 4 others",
       image:
         "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop",
-      technologies: ["JavaScript", "CSS3", "Weather API", "Chart.js"],
-      github: "#",
+      technologies: ["JavaScript", "CSS3", "Flask", "yt-dlp"],
+      github: "https://github.com/VDevanarayanan/Ultimate-Video-Downloader",
       live: "#",
       featured: false,
     },
@@ -43,9 +44,9 @@ const ProjectsSection = () => {
         "A responsive portfolio website showcasing projects and skills with interactive animations and modern design.",
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      github: "#",
-      live: "#",
+      technologies: ["React", "TypeScript", "Tailwind CSS"],
+      github: "https://github.com/VDevanarayanan/Portfolio/tree/main",
+      live: "https://portfolio-m5mp.onrender.com",
       featured: false,
     },
   ];

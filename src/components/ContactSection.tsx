@@ -1,32 +1,55 @@
-
-import React, { useState } from 'react';
-import { Mail, Github, Linkedin, Code, Send, MapPin, Phone } from 'lucide-react';
+import React, { useState } from "react";
+import {
+  Mail,
+  Github,
+  Linkedin,
+  Code,
+  Send,
+  MapPin,
+  Phone,
+} from "lucide-react";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+
+    try {
+      const response = await fetch("https://formspree.io/f/mqablgzp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setFormData({ name: "", email: "", message: "" });
+        alert("Message sent successfully!");
+      } else {
+        alert("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      alert("An error occurred. Please try again later.");
+    } finally {
       setIsSubmitting(false);
-      setFormData({ name: '', email: '', message: '' });
-      alert('Message sent successfully!');
-    }, 2000);
+    }
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -41,7 +64,8 @@ const ContactSection = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mx-auto mb-6"></div>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            I'm always open to discussing new opportunities and interesting projects
+            I'm always open to discussing new opportunities and interesting
+            projects
           </p>
         </div>
 
@@ -49,8 +73,10 @@ const ContactSection = () => {
           {/* Contact Info */}
           <div className="space-y-8">
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-              <h3 className="text-2xl font-semibold mb-6 text-purple-300">Let's Connect</h3>
-              
+              <h3 className="text-2xl font-semibold mb-6 text-purple-300">
+                Let's Connect
+              </h3>
+
               <div className="space-y-6">
                 <div className="flex items-center space-x-4 group">
                   <div className="p-3 bg-purple-600/20 rounded-lg group-hover:bg-purple-600/30 transition-colors duration-300">
@@ -58,50 +84,61 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <p className="text-gray-400">Email</p>
-                    <p className="text-white">your.email@example.com</p>
+                    <p className="text-white">vinoddevanarayanan@gmail.com</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center space-x-4 group">
                   <div className="p-3 bg-purple-600/20 rounded-lg group-hover:bg-purple-600/30 transition-colors duration-300">
                     <MapPin size={24} className="text-purple-400" />
                   </div>
                   <div>
                     <p className="text-gray-400">Location</p>
-                    <p className="text-white">Your City, Country</p>
+                    <p className="text-white">Kozhikode,Kerala</p>
                   </div>
                 </div>
               </div>
 
               {/* Social Links */}
               <div className="mt-8 pt-8 border-t border-white/10">
-                <h4 className="text-lg font-semibold mb-4 text-purple-300">Follow Me</h4>
+                <h4 className="text-lg font-semibold mb-4 text-purple-300">
+                  Follow Me
+                </h4>
                 <div className="flex space-x-4">
                   <a
-                    href="https://linkedin.com/in/yourprofile"
+                    href="https://www.linkedin.com/in/v-devanarayanan/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group p-3 bg-blue-600/20 rounded-lg hover:bg-blue-600/30 transition-all duration-300 hover:scale-110"
                   >
-                    <Linkedin size={24} className="text-blue-400 group-hover:rotate-12 transition-transform duration-300" />
+                    <Linkedin
+                      size={24}
+                      className="text-blue-400 group-hover:rotate-12 transition-transform duration-300"
+                    />
                   </a>
-                  
+
                   <a
-                    href="https://github.com/yourusername"
+                    href="https://github.com/VDevanarayanan"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group p-3 bg-gray-600/20 rounded-lg hover:bg-gray-600/30 transition-all duration-300 hover:scale-110"
                   >
-                    <Github size={24} className="text-gray-400 group-hover:rotate-12 transition-transform duration-300" />
+                    <Github
+                      size={24}
+                      className="text-gray-400 group-hover:rotate-12 transition-transform duration-300"
+                    />
                   </a>
-                  
+
                   <a
-                    href="https://leetcode.com/yourusername"
+                    href="https://leetcode.com/u/Devacoder/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group p-3 bg-orange-600/20 rounded-lg hover:bg-orange-600/30 transition-all duration-300 hover:scale-110"
                   >
-                    <Code size={24} className="text-orange-400 group-hover:rotate-12 transition-transform duration-300" />
+                    <Code
+                      size={24}
+                      className="text-orange-400 group-hover:rotate-12 transition-transform duration-300"
+                    />
                   </a>
                 </div>
               </div>
@@ -110,8 +147,10 @@ const ContactSection = () => {
 
           {/* Contact Form */}
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-            <h3 className="text-2xl font-semibold mb-6 text-purple-300">Send Message</h3>
-            
+            <h3 className="text-2xl font-semibold mb-6 text-purple-300">
+              Send Message
+            </h3>
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-gray-400 mb-2">
@@ -128,7 +167,7 @@ const ContactSection = () => {
                   placeholder="Enter your name"
                 />
               </div>
-              
+
               <div>
                 <label htmlFor="email" className="block text-gray-400 mb-2">
                   Your Email
@@ -144,7 +183,7 @@ const ContactSection = () => {
                   placeholder="Enter your email"
                 />
               </div>
-              
+
               <div>
                 <label htmlFor="message" className="block text-gray-400 mb-2">
                   Your Message
@@ -160,7 +199,7 @@ const ContactSection = () => {
                   placeholder="Enter your message"
                 />
               </div>
-              
+
               <button
                 type="submit"
                 disabled={isSubmitting}
@@ -185,7 +224,8 @@ const ContactSection = () => {
         {/* Footer */}
         <div className="mt-16 pt-8 border-t border-white/10 text-center">
           <p className="text-gray-400">
-            © 2024 Your Name. Built with React, TypeScript, and Tailwind CSS.
+            © 2025 V.Devanarayanan. Built with React, TypeScript, and Tailwind
+            CSS.
           </p>
         </div>
       </div>
