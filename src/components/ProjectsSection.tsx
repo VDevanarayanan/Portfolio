@@ -17,12 +17,12 @@ const ProjectsSection = () => {
       featured: true,
     },
     {
-      title: "Task Management App",
+      title: "D&D GPT Dungeon Master",
       description:
-        "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+        "A GPT which lets users play dungeons and dragons without a human dungeon master.",
       image:
         "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-      technologies: ["React", "Firebase", "Material-UI", "Socket.io"],
+      technologies: ["React", "TailWind CSS", "LLM", "TypeScript"],
       github: "#",
       live: "#",
       featured: true,
