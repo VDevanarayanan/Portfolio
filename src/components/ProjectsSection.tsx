@@ -14,7 +14,7 @@ const ProjectsSection = () => {
       technologies: ["React", "Node.js", "MongoDB", "Express"],
       github: "https://github.com/VDevanarayanan/movie-wish-list",
       live: "https://movie-frontend-6p5h.onrender.com",
-      featured: true,
+      featured: false,
     },
     {
       title: "D&D GPT Dungeon Master",
@@ -23,9 +23,9 @@ const ProjectsSection = () => {
       image:
         "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
       technologies: ["React", "TailWind CSS", "LLM", "TypeScript"],
-      github: "#",
-      live: "#",
-      featured: true,
+      github: "https://github.com/VDevanarayanan/DND-GPT",
+      live: "https://dnd-gpt.onrender.com",
+      featured: false,
     },
     {
       title: "Ultimate Video Downloader",
