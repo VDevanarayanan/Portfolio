@@ -7,11 +7,9 @@ const AboutSection = () => {
 
   const skills = [
     { name: 'JavaScript', level: 90, color: 'from-yellow-400 to-yellow-600' },
-    { name: 'React', level: 85, color: 'from-blue-400 to-blue-600' },
+    { name: 'React', level: 30, color: 'from-blue-400 to-blue-600' },
     { name: 'Node.js', level: 80, color: 'from-green-400 to-green-600' },
     { name: 'Python', level: 75, color: 'from-blue-500 to-blue-700' },
-    { name: 'TypeScript', level: 85, color: 'from-blue-600 to-blue-800' },
-    { name: 'CSS/Tailwind', level: 90, color: 'from-purple-400 to-purple-600' },
   ];
 
   useEffect(() => {
